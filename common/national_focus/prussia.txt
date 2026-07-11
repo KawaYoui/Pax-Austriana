@@ -1,0 +1,87 @@
+focus_tree = {
+	id = prussia_focus_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 50
+			tag = PRE
+			#always = no
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 50 y = 2500 }
+
+	shared_focus = HABSBURG_part_of_something_bigger
+
+	initial_show_position = {
+		x = 38
+		y = 0
+	}
+
+    focus = {
+        id = PRE_the_awakening_of_the_black_eagle
+        icon = GFX_goal_the_awakening_of_the_black_eagle
+        cost = 5
+		x = 0
+		y = 0
+		completion_reward = {
+            add_political_power = 150
+            add_stability = 0.05
+			country_event = { id = pre_events.1 }
+        }
+    }
+	# 군사
+	focus = {
+        id = PRE_resolve_of_the_black_uniforms
+        icon = GFX_goal_preparing_for_german_unification
+		prerequisite = { focus = PRE_the_awakening_of_the_black_eagle }
+        cost = 5
+		x = 15
+		y = 1
+		completion_reward = {
+			
+        }
+    }
+	# 메인
+	focus = {
+        id = PRE_preparing_for_german_unification
+        icon = GFX_goal_resolve_of_the_black_uniforms
+		prerequisite = { focus = PRE_the_awakening_of_the_black_eagle }
+        cost = 5
+		x = 0
+		y = 1
+		completion_reward = {
+
+        }
+    }
+	
+	focus = {
+        id = PRE_return_of_the_iron_and_blood
+        icon = GFX_goal_iron_and_blood 
+        prerequisite = { focus = PRE_preparing_for_german_unification }
+		relative_position_id = PRE_preparing_for_german_unification
+        cost = 5
+        x = -5
+        y = 1
+
+        completion_reward = {
+
+        }
+    }
+	# 경제 
+	focus = {
+        id = PRE_proclamation_of_pan_german_economy
+        icon = GFX_focus_GER_integrated_economies
+		prerequisite = { focus = PRE_the_awakening_of_the_black_eagle }
+        cost = 5
+		x = -15
+		y = 1
+		completion_reward = {
+
+        }
+    }
+}
